@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integrating Single Cell &amp; Spatial Transcriptomics — Cell Discovery Network</title>
+  <meta name="description" content="How CDN researchers combine single-cell and spatial transcriptomics to understand pediatric tissue biology.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="../index.html">Cell <span>Discovery</span> Network</a>
+      <div class="links">
+        <a href="../index.html#mission">Mission</a>
+        <a href="../index.html#office-hours">Office Hours</a>
+        <a href="../index.html#workshops">Workshops</a>
+        <a href="./">Spotlight</a>
+        <a href="../index.html#grants">Grants</a>
+        <a href="../index.html#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="wrap">
+      <a class="back" href="./">← All spotlight stories</a>
+      <span class="pill pill-lavender">Methods</span>
+      <h1>Integrating Single Cell &amp; Spatial Transcriptomics</h1>
+      <p class="story-meta">Marc Elosúa Bayes · 2023</p>
+    </div>
+  </header>
+
+  <article class="story">
+    <div class="wrap">
+      <div class="story-body">
+<p>Cells are the basic building blocks of all living organisms. As biologists we are in a continuous endeavor to characterize and unravel how they come together to form and maintain complex tissue structures and organisms. Understanding the underlying molecular mechanisms ruling these systems is critical to understanding how cells communicate, interact, respond to stimuli, and evolve in steady-state and disease conditions (Wagner <em>et al.,</em> 2016).</p>
+<p>Single-cell RNA sequencing (scRNAseq) technologies have revolutionized our ability to understand cells. scRNAseq is an untargeted approach to profile individual cells at the whole transcriptome level. In 2009, Tang, <em>et al.</em> showed how an mRNA sequencing assay of mouse blastomeres increased transcript detection sensitivity, and enabled the identification of more than 1,700 previously unknown transcript isoforms2. Already, at this nascent stage, scRNAseq was showing its strengths and hinting at the powerful revolution about to come. Currently, there are many different approaches to generating scRNAseq data. All of them follow, broadly, the same basic steps: 1) single cell isolation and capture, 2) cell lysis and barcoding, 3) reverse transcription, 4) pre-amplification, and 5) library preparation and sequencing. For more detailed information on the technologies refer to established literature such as Svensson <em>et al.</em> 2018 and Mereu &amp; Lafzi <em>et al.</em> 2020.</p>
+<p>However, in order to fully understand a cell’s behavior and role in the tissue, it is critical to look beyond the cell in isolation. It is necessary to understand where it is located and how it is interacting with its neighbors. Ultimately, maintaining the spatial context is key to understanding tissue architecture of single cells in health and disease. However, single-cell analysis methods lose this spatial disposition in the cell dissociation step. The spatial neighborhood of a cell defines its interaction universe through juxtacrine and paracrine signaling, and determines which biological processes that cell will carry out. Bulk RNAseq and scRNAseq deliver the promise of transcriptomics at the tissue and single-cell level, but at the cost of dissociating cells and removing the spatial context. Therefore, technologies aimed at capturing mRNAs while retaining the spatial context have been developed for a more comprehensive analysis. One of the most popular spatial transcriptomics technologies used nowadays is Visium. Originally developed by <em>Ståhl et al.</em> in <em>2016</em> and commercialized by 10X Genomics in 2020 (Figure 1).</p>
+<figure class="story-figure">
+  <img src="../assets/spotlight/integrating-sc-spatial-image1.png" alt="Visium spatial gene expression slide assay" loading="lazy">
+  <figcaption>The Visium spatial gene expression slide assay (<a href="https://www.10xgenomics.com/">https://www.10xgenomics.com/</a>)</figcaption>
+</figure>
+<p>The Visium technology, allows the user to profile tissue sections 6.5mm x 6.5mm, using ~5,000 spots. These spots are 55µm in diameter, and therefore do not provide single cell resolution. For reference immune cells range from 8-20µm in diameters while epithelial cells can go up to 25µm. Therefore, these spots are believed to capture the mRNA from 1-10 cell and sometimes even more, depending on the cellular density of the tissue.</p>
+<p>Therefore, during his Ph.D. Marc set out to leverage the strengths of scRNAseq and spatial transcriptomics by integrating them and inferring the location of cell types and states within complex tissues. To do so he developed SPOTLight (Elosua-Bayes <em>et al</em>,. 2021), an NMF based regression model that learns gene signatures from the single cell data and uses them to decompose the cell types found within each spot. He then proceeded to apply it in different scenarios, for example to better understand the tumor microenvironment in oropharyngeal carcinoma (Nieto <em>et al</em>., 2021). There he showed how the tumor presented different immune landscapes within and surrounding it. Some of these regions were immune active with cytotoxic CD8 T cells present while in others tumor cells had managed to dampen the immune response and showed a higher prevalence of regulatory and exhausted T cells (Figure 2).</p>
+<figure class="story-figure">
+  <img src="../assets/spotlight/integrating-sc-spatial-image2.png" alt="Tumor microenvironment spatial deconvolution" loading="lazy">
+</figure>
+<p>These results highlight the heterogeneous nature of tumors and the importance of characterizing the different compartments found within them. Reaching this level of spatial resolution will enable us to better understand tumors and their heterogeneity, serve as prognostic markers, and ultimately deliver more effective personalized treatments.</p>
+<p>The continuous advance of single-cell and spatial technologies will keep transforming our understanding of biology in health and disease. However, these advances must be translated to the clinic in order to have an impact on the general population. Nowadays, there is an abundance of data that comes from multiple modalities, tissues and conditions, and much more is yet to come. The ability to integrate this information and draw the line from genomic variants to specific cell types in specific spatial niches to disease onset  and treatment will be a grand challenge of the years to come.</p>
+<h2>References</h2>
+<ul class="refs">
+  <li>Wagner, Allon, Aviv Regev, and Nir Yosef. 2016. “Revealing the Vectors of Cellular Identity with Single-Cell Genomics.” Nature Biotechnology 34 (11): 1145–60. <a href="https://doi.org/10.1038/nbt.3711">https://doi.org/10.1038/nbt.3711</a>.</li>
+  <li>Tang, Fuchou, Catalin Barbacioru, Yangzhou Wang, Ellen Nordman, Clarence Lee, Nanlan Xu, Xiaohui Wang, et al. 2009. “MRNA-Seq Whole-Transcriptome Analysis of a Single Cell.” Nature Methods 6 (5): 377–82. <a href="https://doi.org/10.1038/nmeth.1315">https://doi.org/10.1038/nmeth.1315</a>.</li>
+  <li>Svensson, Valentine, Roser Vento-Tormo, and Sarah A. Teichmann. 2018. “Exponential Scaling of Single-Cell RNA-Seq in the Past Decade.” Nature Protocols 13 (4): 599–604. <a href="https://doi.org/10.1038/nprot.2017.149">https://doi.org/10.1038/nprot.2017.149</a>.</li>
+  <li>Mereu, Elisabetta, Atefeh Lafzi, Catia Moutinho, Christoph Ziegenhain, Davis J. McCarthy, Adrián Álvarez-Varela, Eduard Batlle, et al. 2020. “Benchmarking Single-Cell RNA-Sequencing Protocols for Cell Atlas Projects.” Nature Biotechnology 38 (6): 747–55. <a href="https://doi.org/10.1038/s41587-020-0469-4">https://doi.org/10.1038/s41587-020-0469-4</a>.</li>
+  <li>Ståhl, Patrik L., Fredrik Salmén, Sanja Vickovic, Anna Lundmark, José Fernández Navarro, Jens Magnusson, Stefania Giacomello, et al. 2016. “Visualization and Analysis of Gene Expression in Tissue Sections by Spatial Transcriptomics.” Science (New York, N.Y.) 353 (6294): 78–82. <a href="https://doi.org/10.1126/science.aaf2403">https://doi.org/10.1126/science.aaf2403</a>.</li>
+  <li>Elosua-Bayes, Marc, Paula Nieto, Elisabetta Mereu, Ivo Gut, and Holger Heyn. 2021. “SPOTlight: Seeded NMF Regression to Deconvolute Spatial Transcriptomics Spots with Single-Cell Transcriptomes.” Nucleic Acids Research 49 (9): e50. <a href="https://doi.org/10.1093/nar/gkab043">https://doi.org/10.1093/nar/gkab043</a>.</li>
+  <li>Nieto, Paula, Marc Elosua-Bayes, Juan L. Trincado, Domenica Marchese, Ramon Massoni-Badosa, Maria Salvany, Ana Henriques, et al. 2021. “A Single-Cell Tumor Immune Atlas for Precision Oncology.” Genome Research 31 (10): 1913–26. <a href="https://doi.org/10.1101/gr.273300.120">https://doi.org/10.1101/gr.273300.120</a>.</li>
+</ul>
+        <div class="story-nav">
+          <a class="btn" href="leadership-team.html">← Previous</a>
+          <a class="btn" href="sarah-djeddi.html">Next story →</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="wrap">
+      © Cell Discovery Network · A collaborative network at Boston Children's Hospital<br>
+      <a href="https://github.com/CellDiscoveryNetwork">GitHub</a> ·
+      <a href="mailto:celldiscoverynetwork@childrens.harvard.edu">Contact</a>
+    </div>
+  </footer>
+
+</body>
+</html>
