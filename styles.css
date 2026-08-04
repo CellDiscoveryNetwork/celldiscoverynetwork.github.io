@@ -371,6 +371,28 @@ footer a { color: var(--ink-soft); }
   line-height: 1.5;
   text-align: left;
 }
+.story-table {
+  width: auto;
+  max-width: 100%;
+  margin: 1.6em auto;
+  border-collapse: collapse;
+  font-size: 15px;
+  color: var(--ink-soft);
+  text-align: left;
+}
+.story-table th,
+.story-table td {
+  border: 1px solid var(--ink);
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 400;
+}
+.story-table tr:first-child th,
+.story-table tr:first-child td,
+.story-table tr:last-child th,
+.story-table tr:last-child td {
+  font-weight: 700;
+}
 .story-body .refs {
   padding-left: 1.2em;
   margin: 0 0 1.2em;
