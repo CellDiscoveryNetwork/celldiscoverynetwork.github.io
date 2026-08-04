@@ -279,7 +279,7 @@ footer a { color: var(--ink-soft); }
 
 /* Spotlight archive & story pages */
 .page-hero {
-  padding: 56px 0 36px;
+  padding: 56px 0 0;
   background: radial-gradient(1200px 380px at 50% -120px, var(--accent-soft), transparent 70%);
 }
 .page-hero .back {
@@ -299,12 +299,12 @@ footer a { color: var(--ink-soft); }
   line-height: 1.15;
 }
 .story {
-  padding: 40px 0 64px;
+  padding: 12px 0 64px;
 }
 .story-meta {
   color: var(--muted);
   font-size: 14px;
-  margin: 0 0 28px;
+  margin: 0 0 12px;
 }
 .story-body {
   max-width: 720px;
@@ -319,6 +319,14 @@ footer a { color: var(--ink-soft); }
   border-radius: var(--radius);
   color: var(--ink-soft);
   font-size: 15px;
+}
+.story-affiliation a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.story-affiliation a:hover {
+  color: var(--accent-2);
 }
 .story-portrait {
   margin: 0 0 28px;
@@ -344,11 +352,14 @@ footer a { color: var(--ink-soft); }
 }
 .story-figure {
   margin: 1.6em 0;
+  text-align: left;
 }
 .story-figure img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
+  margin: 0 auto;
   border-radius: 10px;
   border: 1px solid var(--line);
   background: var(--bg-card);
@@ -358,6 +369,7 @@ footer a { color: var(--ink-soft); }
   font-size: 14px;
   color: var(--muted);
   line-height: 1.5;
+  text-align: left;
 }
 .story-body .refs {
   padding-left: 1.2em;
